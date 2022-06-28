@@ -2,21 +2,9 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.header {
-  background: #f2f2f2;
-  border: none;
-  height: 70px;
-  position: relative;
-  text-align: center;
-}
-.page-preview-body {
-  height: calc(100% - 70px);
-  overflow: hidden;
-  text-align: center;
-}
+
 .page-body {
   height: auto;
-  
 }
 .header-navbar {
   min-height: 80px;
@@ -103,6 +91,11 @@
 
   font-family: "Open Sans", sans-serif;
 }
+@media screen and (max-width:575px) {
+  .para-graph{
+    font-size: 1.150rem;
+  }
+}
 
 .small-circle {
   width: 115px;
@@ -162,36 +155,34 @@ footer div p {
   footer div p {
     width: 100%;
     text-align: center;
+    padding: 30px 15px;
   }
 }
-.final-conent {
-  color: #ddd9d9;
-  background-color: #333333;
-}
-.final-conent span {
-  padding-left: 2px;
-  padding-top: 2px;
-}
-.final-conent p {
-  margin-top: 0px;
-  font-size: 0.8rem;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
+
 .link {
   color: #ddd9d9;
-  padding-right: 8px;
+  text-align: center;
 }
 .link:hover {
   text-decoration: none;
   color: #a1a1a1;
 }
-.link-last {
-  color: #ddd9d9;
-  padding-left: 8px;
+
+.content {
+  display: -webkit-inline-box !important;
 }
-.link-last:hover {
-  text-decoration: none;
-  color: #a1a1a1;
+.soft-building {
+  color: #ddd9d9;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  font-size: small;
+  padding: 15px;
+}
+@media screen and (max-width: 570px) {
+  .soft-building {
+    font-size: 12px;
+    text-align: center;
+    padding: 20px 8px;
+  }
 }
