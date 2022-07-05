@@ -13,8 +13,14 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
       body {
         font-family: "Roboto", "Arial", "sans-serif";
@@ -127,8 +133,8 @@
       }
     </style>
   </head>
-  <body class="page-body" >
-    <div class="page-preview">
+  <body id="tab">
+    <!-- <div class="page-preview">
       <div class="page-preview-header">
         <a class="hidden-sm hidden-xs" href="#" id="previewDesktopBtn" data-preview-size="100%">Desktop</a>
         <a class="hidden-sm hidden-xs" href="#" id="previewLaptopBtn" data-preview-size="1040px">Laptop</a>
@@ -136,13 +142,13 @@
         <a class="hidden-xs" href="#" id="previewPhoneHorizontalBtn" data-preview-size="640px">Horizantal Phone</a>
         <a class="hidden-xs" href="#" id="previewPhoneBtn" data-preview-size="440px">Phone</a>
       </div>
-    </div>
+    </div> -->
     <!-- <div>
       <h3 style="text-align: center" data-preview-size="820px" >Tab</h3>
     </div> -->
 
-    <!-- <body id="tab" class="page-body">
-    <div ><h3 style="text-align:center ;" onclick="tab()">Tab</h3></div> -->
+    <!-- <body id="tab" class="page-body"> -->
+    <div><h3 style="text-align: center" onclick="tab()">Tab</h3></div>
     <div class="topnav" id="myTopnav">
       <a href="#home" class="active">Home</a>
       <a href="#news">News</a>
@@ -158,17 +164,22 @@
         <div class="circle"></div>
         <h2 class="page-head">Bold steps forward<br /></h2>
         <p class="para-graph">
-          Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. A lacus vestibulum sed arcu non.
-          Dolor magna eget est lorem ipsum dolor sit amet consectetur. Mauris pellentesque pulvinar pellentesque
-          habitant morbi tristique senectus. Nec feugiat nisl pretium fusce id. Justo laoreet sit amet cursus sit amet.
-          Porta non pulvinar neque laoreet suspendisse interdum consectetur libero.
+          Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus
+          dolor. A lacus vestibulum sed arcu non. Dolor magna eget est lorem
+          ipsum dolor sit amet consectetur. Mauris pellentesque pulvinar
+          pellentesque habitant morbi tristique senectus. Nec feugiat nisl
+          pretium fusce id. Justo laoreet sit amet cursus sit amet. Porta non
+          pulvinar neque laoreet suspendisse interdum consectetur libero.
         </p>
         <div class="small-circle"></div>
       </div>
     </section>
     <footer>
       <div>
-        <p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+        <p>
+          Sample text. Click to select the text box. Click again or double click
+          to start editing the text.
+        </p>
       </div>
     </footer>
     <div class="soft-building">
@@ -197,99 +208,97 @@
         }
       }
 
-      // function tab() {
-      //   // document.getElementById("tab").className = "tab-size";
-      //   document.getElementById("tab").style.width = "400px";
+      function tab() {
+        // document.getElementById("tab").className = "tab-size";
+        document.getElementById("tab").style.width = "820px";appendTo("body");
+      }
+
+      // var device = "desktop";
+      // function init($) {
+      //   $("#previewDesktopBtn").click(function (e) {
+      //     setLivePreviewFrameSize($(this));
+      //     setActiveResponsiveButton(this);
+      //     e.preventDefault();
+      //   });
+
+      //   $("#previewLaptopBtn").click(function (e) {
+      //     setLivePreviewFrameSize($(this));
+      //     setActiveResponsiveButton(this);
+      //     e.preventDefault();
+      //   });
+      //   $("#previewTabletBtn").click(function (e) {
+      //     setLivePreviewFrameSize($(this));
+      //     setActiveResponsiveButton(this);
+      //     e.preventDefault();
+      //   });
+      //   $("#previewPhoneHorizontalBtn").click(function (e) {
+      //     setLivePreviewFrameSize($(this));
+      //     setActiveResponsiveButton(this);
+      //     e.preventDefault();
+      //   });
+      //   $("#previewPhoneBtn").click(function (e) {
+      //     setLivePreviewFrameSize($(this));
+      //     setActiveResponsiveButton(this);
+      //     e.preventDefault();
+      //   });
+
+      //   detectActiveResponsiveButton();
       // }
 
-      var device = "desktop";
-      function init($) {
-        $("#previewDesktopBtn").click(function (e) {
-          setLivePreviewFrameSize($(this));
-          setActiveResponsiveButton(this);
-          e.preventDefault();
-        });
+      // if (jQuery.isReady) {
+      //   init(jQuery);
+      // } else {
+      //   jQuery(function ($) {
+      //     init($);
+      //   });
+      // }
 
-        $("#previewLaptopBtn").click(function (e) {
-          setLivePreviewFrameSize($(this));
-          setActiveResponsiveButton(this);
-          e.preventDefault();
-        });
-        $("#previewTabletBtn").click(function (e) {
-          setLivePreviewFrameSize($(this));
-          setActiveResponsiveButton(this);
-          e.preventDefault();
-        });
-        $("#previewPhoneHorizontalBtn").click(function (e) {
-          setLivePreviewFrameSize($(this));
-          setActiveResponsiveButton(this);
-          e.preventDefault();
-        });
-        $("#previewPhoneBtn").click(function (e) {
-          setLivePreviewFrameSize($(this));
-          setActiveResponsiveButton(this);
-          e.preventDefault();
-        });
+      // function setActiveResponsiveButton(btn) {
+      //   $(".page-preview-header > a").removeClass("active");
+      //   $(btn).addClass("active");
+      // }
 
-        detectActiveResponsiveButton();
-      }
+      // function detectActiveResponsiveButton() {
+      //   var d = device;
+      //   if (!d) {
+      //     d = "desktop";
+      //   }
+      //   $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
+      // }
 
-      if (jQuery.isReady) {
-        init(jQuery);
-      } else {
-        jQuery(function ($) {
-          init($);
-        });
-      }
+      // function getDataPreviewSizeAttr(el) {
+      //   return el.closest("[data-preview-size]").attr("data-preview-size");
+      // }
 
-      function setActiveResponsiveButton(btn) {
-        $(".page-preview-header > a").removeClass("active");
-        $(btn).addClass("active");
-      }
+      // function setLivePreviewFrameSize(srcEl) {
+      //   var getScrollbarWidth = function () {
+      //     var s = $(
+      //       '<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>'
+      //     ).appendTo("body");
+      //     var res = s.width() - s.find("div").last().width();
+      //     s.remove();
+      //     return res;
+      //   };
+      //   var attr = getDataPreviewSizeAttr(srcEl);
+      //   $("#livePreviewFrame").width(attr.indexOf("%") !== -1 ? attr : parseInt(attr, 10) + getScrollbarWidth());
+      // }
 
-      function detectActiveResponsiveButton() {
-        var d = device;
-        if (!d) {
-          d = "desktop";
-        }
-        $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
-      }
-
-      function getDataPreviewSizeAttr(el) {
-        return el.closest("[data-preview-size]").attr("data-preview-size");
-      }
-
-      function setLivePreviewFrameSize(srcEl) {
-        var getScrollbarWidth = function () {
-          var s = $(
-            '<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>'
-          ).appendTo("body");
-          var res = s.width() - s.find("div").last().width();
-          s.remove();
-          return res;
-        };
-        var attr = getDataPreviewSizeAttr(srcEl);
-        $("#livePreviewFrame").width(attr.indexOf("%") !== -1 ? attr : parseInt(attr, 10) + getScrollbarWidth());
-      }
-
-      if (window.parent) {
-          var _w = 0, _h = 0;
-          var updateFormSize = function () {
-            var form = $('form.shaped-form-extended,form.shaped-form');
-            var w = form.outerWidth(true);
-            var h = form.outerHeight(true);
-            if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
-              _w = w;
-              _h = h;
-              var msg = { key: 'login-frame-size', width: w, height: h };
-              window.parent.postMessage(msg, "*");
-            }
-            setTimeout(updateFormSize, 300);
-          }
-          updateFormSize();
-        }
-
-        
+      // if (window.parent) {
+      //     var _w = 0, _h = 0;
+      //     var updateFormSize = function () {
+      //       var form = $('form.shaped-form-extended,form.shaped-form');
+      //       var w = form.outerWidth(true);
+      //       var h = form.outerHeight(true);
+      //       if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
+      //         _w = w;
+      //         _h = h;
+      //         var msg = { key: 'login-frame-size', width: w, height: h };
+      //         window.parent.postMessage(msg, "*");
+      //       }
+      //       setTimeout(updateFormSize, 300);
+      //     }
+      //     updateFormSize();
+      //   }
     </script>
   </body>
 </html>
