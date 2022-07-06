@@ -17,10 +17,12 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <style>
       body {
         font-family: "Roboto", "Arial", "sans-serif";
@@ -133,22 +135,53 @@
       }
     </style>
   </head>
-  <body id="tab">
-    <!-- <div class="page-preview">
+  <!-- <body id="livePreviewFrame" width="1057" style="width:100%;"></body> -->
+  <body id="livePreviewFrame" >
+    <div class="page-preview">
       <div class="page-preview-header">
-        <a class="hidden-sm hidden-xs" href="#" id="previewDesktopBtn" data-preview-size="100%">Desktop</a>
-        <a class="hidden-sm hidden-xs" href="#" id="previewLaptopBtn" data-preview-size="1040px">Laptop</a>
-        <a class="hidden-xs" href="#" id="previewTabletBtn" data-preview-size="820px">Tablet</a>
-        <a class="hidden-xs" href="#" id="previewPhoneHorizontalBtn" data-preview-size="640px">Horizantal Phone</a>
-        <a class="hidden-xs" href="#" id="previewPhoneBtn" data-preview-size="440px">Phone</a>
+        <a
+          class="hidden-sm hidden-xs"
+          href="#"
+          id="previewDesktopBtn"
+          data-preview-size="100%"
+          >Destop</a
+        >
+        <a
+          class="hidden-sm hidden-xs"
+          href="#"
+          id="previewLaptopBtn"
+          data-preview-size="1040px"
+          >Laptop</a
+        >
+        <a
+          class="hidden-xs"
+          href="#"
+          id="previewTabletBtn"
+          data-preview-size="820px"
+          >Table</a
+        >
+        <a
+          class="hidden-xs"
+          href="#"
+          id="previewPhoneHorizontalBtn"
+          data-preview-size="640px"
+          >PhoneHorizantal</a
+        >
+        <a
+          class="hidden-xs"
+          href="#"
+          id="previewPhoneBtn"
+          data-preview-size="440px"
+          >Phone</a
+        >
+        <a
+          class="close"
+          href="/ht/336980/we-believe-that-bold-steps-define-the-future-html-template"
+        ></a>
       </div>
-    </div> -->
-    <!-- <div>
-      <h3 style="text-align: center" data-preview-size="820px" >Tab</h3>
-    </div> -->
+    </div>
 
-    <!-- <body id="tab" class="page-body"> -->
-    <div><h3 style="text-align: center" onclick="tab()">Tab</h3></div>
+    <div><h3 style="text-align: center">Tab</h3></div>
     <div class="topnav" id="myTopnav">
       <a href="#home" class="active">Home</a>
       <a href="#news">News</a>
@@ -210,95 +243,101 @@
 
       function tab() {
         // document.getElementById("tab").className = "tab-size";
-        document.getElementById("tab").style.width = "820px";appendTo("body");
+        document.getElementById("tab").style.width = "820px";
+        appendTo("body");
       }
 
-      // var device = "desktop";
-      // function init($) {
-      //   $("#previewDesktopBtn").click(function (e) {
-      //     setLivePreviewFrameSize($(this));
-      //     setActiveResponsiveButton(this);
-      //     e.preventDefault();
-      //   });
+      var device = "desktop";
+      function init($) {
+        $("#previewDesktopBtn").click(function (e) {
+          setLivePreviewFrameSize($(this));
+          setActiveResponsiveButton(this);
+          e.preventDefault();
+        });
 
-      //   $("#previewLaptopBtn").click(function (e) {
-      //     setLivePreviewFrameSize($(this));
-      //     setActiveResponsiveButton(this);
-      //     e.preventDefault();
-      //   });
-      //   $("#previewTabletBtn").click(function (e) {
-      //     setLivePreviewFrameSize($(this));
-      //     setActiveResponsiveButton(this);
-      //     e.preventDefault();
-      //   });
-      //   $("#previewPhoneHorizontalBtn").click(function (e) {
-      //     setLivePreviewFrameSize($(this));
-      //     setActiveResponsiveButton(this);
-      //     e.preventDefault();
-      //   });
-      //   $("#previewPhoneBtn").click(function (e) {
-      //     setLivePreviewFrameSize($(this));
-      //     setActiveResponsiveButton(this);
-      //     e.preventDefault();
-      //   });
+        $("#previewLaptopBtn").click(function (e) {
+          setLivePreviewFrameSize($(this));
+          setActiveResponsiveButton(this);
+          e.preventDefault();
+        });
+        $("#previewTabletBtn").click(function (e) {
+          setLivePreviewFrameSize($(this));
+          setActiveResponsiveButton(this);
+          e.preventDefault();
+        });
+        $("#previewPhoneHorizontalBtn").click(function (e) {
+          setLivePreviewFrameSize($(this));
+          setActiveResponsiveButton(this);
+          e.preventDefault();
+        });
+        $("#previewPhoneBtn").click(function (e) {
+          setLivePreviewFrameSize($(this));
+          setActiveResponsiveButton(this);
+          e.preventDefault();
+        });
 
-      //   detectActiveResponsiveButton();
-      // }
+        detectActiveResponsiveButton();
+      }
 
-      // if (jQuery.isReady) {
-      //   init(jQuery);
-      // } else {
-      //   jQuery(function ($) {
-      //     init($);
-      //   });
-      // }
+      if (jQuery.isReady) {
+        init(jQuery);
+      } else {
+        jQuery(function ($) {
+          init($);
+        });
+      }
 
-      // function setActiveResponsiveButton(btn) {
-      //   $(".page-preview-header > a").removeClass("active");
-      //   $(btn).addClass("active");
-      // }
+      function setActiveResponsiveButton(btn) {
+        $(".page-preview-header > a").removeClass("active");
+        $(btn).addClass("active");
+      }
 
-      // function detectActiveResponsiveButton() {
-      //   var d = device;
-      //   if (!d) {
-      //     d = "desktop";
-      //   }
-      //   $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
-      // }
+      function detectActiveResponsiveButton() {
+        var d = device;
+        if (!d) {
+          d = "desktop";
+        }
+        $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
+      }
 
-      // function getDataPreviewSizeAttr(el) {
-      //   return el.closest("[data-preview-size]").attr("data-preview-size");
-      // }
+      function getDataPreviewSizeAttr(el) {
+        return el.closest("[data-preview-size]").attr("data-preview-size");
+      }
 
-      // function setLivePreviewFrameSize(srcEl) {
-      //   var getScrollbarWidth = function () {
-      //     var s = $(
-      //       '<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>'
-      //     ).appendTo("body");
-      //     var res = s.width() - s.find("div").last().width();
-      //     s.remove();
-      //     return res;
-      //   };
-      //   var attr = getDataPreviewSizeAttr(srcEl);
-      //   $("#livePreviewFrame").width(attr.indexOf("%") !== -1 ? attr : parseInt(attr, 10) + getScrollbarWidth());
-      // }
+      function setLivePreviewFrameSize(srcEl) {
+        var getScrollbarWidth = function () {
+          var s = $(
+            '<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>'
+          ).appendTo("body");
+          var res = s.width() - s.find("div").last().width();
+          s.remove();
+          return res;
+        };
+        var attr = getDataPreviewSizeAttr(srcEl);
+        $("#livePreviewFrame").width(
+          attr.indexOf("%") !== -1
+            ? attr
+            : parseInt(attr, 10) + getScrollbarWidth()
+        );
+      }
 
-      // if (window.parent) {
-      //     var _w = 0, _h = 0;
-      //     var updateFormSize = function () {
-      //       var form = $('form.shaped-form-extended,form.shaped-form');
-      //       var w = form.outerWidth(true);
-      //       var h = form.outerHeight(true);
-      //       if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
-      //         _w = w;
-      //         _h = h;
-      //         var msg = { key: 'login-frame-size', width: w, height: h };
-      //         window.parent.postMessage(msg, "*");
-      //       }
-      //       setTimeout(updateFormSize, 300);
-      //     }
-      //     updateFormSize();
-      //   }
+      if (window.parent) {
+        var _w = 0,
+          _h = 0;
+        var updateFormSize = function () {
+          var form = $("form.shaped-form-extended,form.shaped-form");
+          var w = form.outerWidth(true);
+          var h = form.outerHeight(true);
+          if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
+            _w = w;
+            _h = h;
+            var msg = { key: "login-frame-size", width: w, height: h };
+            window.parent.postMessage(msg, "*");
+          }
+          setTimeout(updateFormSize, 300);
+        };
+        updateFormSize();
+      }
     </script>
   </body>
 </html>
