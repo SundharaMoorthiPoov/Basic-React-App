@@ -30,7 +30,6 @@
             display: none;
         }
 
-
         html,
         body {
             height: 100%;
@@ -82,9 +81,8 @@
         }
     </style>
 </head>
-<!-- <body id="livePreviewFrame" width="1057" style="width:100%;"></body> -->
 
-<body >
+<body>
     <div class="page-preview">
         <div class="page-preview-header">
             <a class="hidden-sm hidden-xs" href="#" id="previewDesktopBtn" data-preview-size="100%">Destop</a>
@@ -95,22 +93,12 @@
             <a class="close" href="/ht/336980/we-believe-that-bold-steps-define-the-future-html-template"></a>
         </div>
         <div class="page-preview-body">
-            <iframe id="livePreviewFrame" src="index.html" width="1057"  style="width: 100%"></iframe>
+            <iframe id="livePreviewFrame" src="index.html" width="1057" style="width: 100%"></iframe>
         </div>
-        
     </div>
 
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
     <script type="text/javascript">
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
         var device = "desktop";
         function init($) {
             $("#previewDesktopBtn").click(function (e) {
@@ -183,24 +171,6 @@
                     ? attr
                     : parseInt(attr, 10) + getScrollbarWidth()
             );
-        }
-
-        if (window.parent) {
-            var _w = 0,
-                _h = 0;
-            var updateFormSize = function () {
-                var form = $("form.shaped-form-extended,form.shaped-form");
-                var w = form.outerWidth(true);
-                var h = form.outerHeight(true);
-                if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
-                    _w = w;
-                    _h = h;
-                    var msg = { key: "login-frame-size", width: w, height: h };
-                    window.parent.postMessage(msg, "*");
-                }
-                setTimeout(updateFormSize, 300);
-            };
-            updateFormSize();
         }
     </script>
 </body>
