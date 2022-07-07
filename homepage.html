@@ -16,8 +16,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <style>
+        .dialog-wrapper {
+            display: none !important;
+        }
+
+        .wrap,
+        #main {
+            height: 100vh;
+            margin: 0 !important;
+        }
+
         iframe {
             display: none;
+        }
+
+
+        html,
+        body {
+            height: 100%;
         }
 
         .page-preview {
@@ -68,7 +84,7 @@
 </head>
 <!-- <body id="livePreviewFrame" width="1057" style="width:100%;"></body> -->
 
-<body id="livePreviewFrame">
+<body >
     <div class="page-preview">
         <div class="page-preview-header">
             <a class="hidden-sm hidden-xs" href="#" id="previewDesktopBtn" data-preview-size="100%">Destop</a>
@@ -81,8 +97,10 @@
         <div class="page-preview-body">
             <iframe id="livePreviewFrame" src="index.html" width="1057"  style="width: 100%"></iframe>
         </div>
+        
     </div>
 
+    <meta name="robots" content="noindex, nofollow">
     <script type="text/javascript">
         function myFunction() {
             var x = document.getElementById("myTopnav");
