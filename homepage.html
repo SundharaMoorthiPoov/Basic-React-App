@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html css</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="//fonts.googleapis.com/css?family=Roboto|Open+Sans:200,300,400,700,800,900&amp;subset=latin"
+        rel="preload" as="font" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style>
+        iframe {
+            display: none;
+        }
+
+        .page-preview {
+            border-radius: 0;
+            height: 100%;
+        }
+
+        .page-preview-header {
+            background: #f2f2f2;
+            border: none;
+            height: 70px;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-preview-header>a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px;
+        }
+
+        .page-preview-header>a:hover {
+            background: #e2f0fc;
+            text-decoration: none;
+        }
+
+        .page-preview-header>a.active {
+            background: #c9e4f9;
+        }
+
+        .page-preview-header>.close {
+            float: right;
+            margin-right: 10px;
+        }
+
+        .page-preview-body {
+            height: calc(100% - 70px);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-preview-body iframe {
+            border: none;
+            display: inline-block;
+            height: 100%;
+        }
+    </style>
+</head>
+<!-- <body id="livePreviewFrame" width="1057" style="width:100%;"></body> -->
+
+<body id="livePreviewFrame">
+    <div class="page-preview">
+        <div class="page-preview-header">
+            <a class="hidden-sm hidden-xs" href="#" id="previewDesktopBtn" data-preview-size="100%">Destop</a>
+            <a class="hidden-sm hidden-xs" href="#" id="previewLaptopBtn" data-preview-size="1040px">Laptop</a>
+            <a class="hidden-xs" href="#" id="previewTabletBtn" data-preview-size="820px">Table</a>
+            <a class="hidden-xs" href="#" id="previewPhoneHorizontalBtn" data-preview-size="640px">PhoneHorizantal</a>
+            <a class="hidden-xs" href="#" id="previewPhoneBtn" data-preview-size="440px">Phone</a>
+            <a class="close" href="/ht/336980/we-believe-that-bold-steps-define-the-future-html-template"></a>
+        </div>
+        <div class="page-preview-body">
+            <iframe id="livePreviewFrame" src="index.html" width="1057"  style="width: 100%"></iframe>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        var device = "desktop";
+        function init($) {
+            $("#previewDesktopBtn").click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+
+            $("#previewLaptopBtn").click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+            $("#previewTabletBtn").click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+            $("#previewPhoneHorizontalBtn").click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+            $("#previewPhoneBtn").click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+
+            detectActiveResponsiveButton();
+        }
+
+        if (jQuery.isReady) {
+            init(jQuery);
+        } else {
+            jQuery(function ($) {
+                init($);
+            });
+        }
+
+        function setActiveResponsiveButton(btn) {
+            $(".page-preview-header > a").removeClass("active");
+            $(btn).addClass("active");
+        }
+
+        function detectActiveResponsiveButton() {
+            var d = device;
+            if (!d) {
+                d = "desktop";
+            }
+            $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
+        }
+
+        function getDataPreviewSizeAttr(el) {
+            return el.closest("[data-preview-size]").attr("data-preview-size");
+        }
+
+        function setLivePreviewFrameSize(srcEl) {
+            var getScrollbarWidth = function () {
+                var s = $(
+                    '<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>'
+                ).appendTo("body");
+                var res = s.width() - s.find("div").last().width();
+                s.remove();
+                return res;
+            };
+            var attr = getDataPreviewSizeAttr(srcEl);
+            $("#livePreviewFrame").width(
+                attr.indexOf("%") !== -1
+                    ? attr
+                    : parseInt(attr, 10) + getScrollbarWidth()
+            );
+        }
+
+        if (window.parent) {
+            var _w = 0,
+                _h = 0;
+            var updateFormSize = function () {
+                var form = $("form.shaped-form-extended,form.shaped-form");
+                var w = form.outerWidth(true);
+                var h = form.outerHeight(true);
+                if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
+                    _w = w;
+                    _h = h;
+                    var msg = { key: "login-frame-size", width: w, height: h };
+                    window.parent.postMessage(msg, "*");
+                }
+                setTimeout(updateFormSize, 300);
+            };
+            updateFormSize();
+        }
+    </script>
+</body>
+
+</html>
